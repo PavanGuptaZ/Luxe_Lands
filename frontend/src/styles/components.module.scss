@@ -1,0 +1,30 @@
+$color : #4375FB;
+
+.BasicBTN,
+.BasicBTN2 {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.BasicBTN {
+    background-color: $color;
+}
+
+.BasicBTN2 {
+    background-color: transparent;
+    border: 1px solid $color;
+    color: $color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

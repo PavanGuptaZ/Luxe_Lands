@@ -1,0 +1,526 @@
+$border: 4px solid #D9D9D9;
+
+.UserPageBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+.asideControlar {
+    border-right: $border;
+    border-bottom: $border;
+
+    .content {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+
+        &>* {
+            border-bottom: $border;
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+            text-transform: capitalize;
+            user-select: none;
+            cursor: pointer;
+            color: gray;
+
+            &.active,
+            &:hover {
+                color: black;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .CoverBox {
+        display: none;
+    }
+}
+
+.mainContent {
+    width: 100%;
+    height: 100vh;
+
+    .headerBox {
+        min-height: 75px;
+        padding: 16px;
+        border-bottom: $border;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .profileBtn {
+            width: fit-content;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .operator {
+            display: none;
+            user-select: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    }
+}
+
+.PropertyBlockBox {
+    height: calc(100% - 150px);
+
+    overflow-y: scroll;
+    padding: 16px;
+
+    .PropertyBlockList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        .PropertyBlock {
+            width: 200px;
+            cursor: pointer;
+            border: 1px solid #D9D9D9;
+            padding: 8px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .imgBox {
+                width: 100%;
+                height: 100px;
+            }
+
+            .name {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            &:hover {
+                background-color: #4375FB;
+                color: #fff;
+            }
+        }
+
+    }
+
+}
+
+.loading {
+    $size: 30px;
+    width: $size;
+    height: $size;
+    border: 3px solid #D9D9D9;
+    border-bottom-color: #4375FB;
+    border-radius: 50%;
+    margin: 28px auto 0 auto;
+    animation: rotate 1s linear 0s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.message {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    margin: 16px;
+}
+
+@media (max-width:600px) {
+    .mainContent {
+
+        .headerBox {
+
+            .heading {
+                font-size: 16px;
+            }
+
+            .operator {
+                display: block;
+            }
+        }
+    }
+
+    .asideControlar {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s ease;
+
+        .content {
+            background-color: #fff;
+            z-index: 2;
+            position: relative;
+        }
+
+        .CoverBox {
+            display: block;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #0000007c;
+            transition: all 0 ease;
+
+        }
+    }
+}
+
+.PropertyDetailsBox {
+    width: 100%;
+    height: calc(100% - 150px);
+    padding: 32px;
+    overflow-y: scroll;
+
+    .PropertyBlock {
+        margin: 16px auto;
+
+        .image {
+            // border: 1px solid gray;
+            aspect-ratio: 2 / 1;
+            margin: 8px 0;
+            // display: none;
+        }
+
+        .content {
+            border: $border;
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                padding: 16px;
+                border-bottom: $border;
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    flex-grow: 2;
+
+                    .name {
+                        font-size: 32px;
+                        margin-bottom: 16px;
+                        font-weight: 600;
+                    }
+
+                    .address {
+                        display: flex;
+                        gap: 12px;
+                        align-items: center;
+                        color: gray;
+
+                        .icon {
+                            color: black;
+                            font-size: 32px;
+                        }
+                    }
+
+                    .tagsBox {
+                        display: flex;
+                        gap: 8px;
+                        flex-wrap: wrap;
+
+                        .tagBlock {
+                            background: #CCCCCC;
+                            width: fit-content;
+                            flex-shrink: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 4px 8px;
+                        }
+                    }
+
+                    .link {
+                        $color: #4375FB;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        width: fit-content;
+                        border: 2px solid $color;
+                        color: $color;
+                        padding: 4px 8px;
+                    }
+
+                    .contentViewBox {
+                        display: flex;
+                        gap: 32px;
+                        flex-wrap: wrap;
+
+                        .contentViewBlock {
+                            display: flex;
+                            flex-direction: column;
+
+                            &>* {
+                                flex-shrink: 0;
+
+                                &:first-child {
+                                    font-weight: 500;
+                                }
+
+                                &:last-child {
+                                    color: gray;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                .controls {
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: flex-end;
+                    flex-shrink: 0;
+                    margin-bottom: 16px;
+
+                    .BTN01 {
+                        width: 100%;
+                    }
+
+                    .BTN02 {
+                        width: 50%;
+                        min-width: 100px;
+                    }
+
+                    .readingBox {
+                        width: 100%;
+
+                        .values {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+
+                        .barBox {
+                            position: relative;
+                            width: 100%;
+                            height: 5px;
+                            background-color: #E2E2E2;
+
+                            .value {
+                                position: absolute;
+                                height: 100%;
+                                left: 0;
+                                top: 0;
+                                background-color: #4375FB;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.propertyBody {
+    display: flex;
+
+
+    .propertyDetails {
+        border-right: $border;
+
+        .DetailsBox {
+            flex-grow: 2;
+            border-bottom: $border;
+            padding: 16px;
+
+            .title {
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+
+            .text {
+                line-height: normal;
+            }
+        }
+
+    }
+
+
+    .roadMap {
+        .StatusBox {
+            border-bottom: $border;
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            width: 325px;
+            height: 125px;
+            flex-shrink: 0;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            .checkBox {
+                width: 20px;
+                height: 20px;
+                border: 1px solid black;
+                position: relative;
+
+                .TickMark {
+                    position: absolute;
+                    left: 2px;
+                    top: -5px;
+                    font-size: 24px;
+                    color: green;
+                }
+            }
+
+            .details {
+                flex-grow: 2;
+
+                .title {
+                    text-transform: capitalize;
+                }
+
+                .tagMessage {
+                    font-size: 12px;
+                    color: gray;
+                }
+
+                .detailsMessage {
+                    color: #4375FB;
+                    font-weight: 500;
+                    font-size: 20px;
+                }
+
+            }
+
+            .StatusContorls {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-between;
+
+                .BtnBox {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 110px;
+                    margin-top: auto;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:1000px) {
+    .PropertyDetailsBox {
+
+        .PropertyBlock {
+
+            .content {
+                border: $border;
+
+                .header {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    align-items: center;
+
+                    .details {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        flex-grow: 2;
+
+                        .name {
+                            text-align: center;
+                        }
+
+                        .contentViewBox,
+                        .tagsBox {
+                            justify-content: center;
+                        }
+
+                        .address,
+                        .link {
+                            margin: auto;
+                        }
+                    }
+
+                    .controls {
+                        width: 75%;
+
+                        .BTN01,
+                        .BTN02 {
+                            width: min(300px, 100%);
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:860px) {
+    .propertyBody {
+        display: flex;
+        flex-direction: column;
+
+        .propertyDetails {
+            border-right: none;
+        }
+
+        .roadMap {
+            .StatusBox {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.errorBox {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    text-align: center;
+}
+
+.BreadcrumbsBox {
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+
+    &>* {
+        user-select: none;
+        cursor: pointer;
+        text-transform: capitalize;
+
+        &:not(:last-of-type)::after {
+            content: ' >';
+        }
+
+        &:last-of-type {
+            cursor: auto;
+            color: #4375FB;
+            font-weight: 500;
+        }
+
+        &:not(:last-of-type):hover {
+            text-decoration: underline;
+        }
+    }
+}
