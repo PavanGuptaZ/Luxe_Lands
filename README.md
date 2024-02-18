@@ -1,15 +1,24 @@
-# LUXE LANDS Frontend
+# LUXE LANDS 
 
 ## Overview
 
 Luxe Lands is a Your Gateway to Exclusive Properties website app developed using the MERN stack, which includes ReactJs, TypeScript, SCSS, and MongoDB. Discover a world of opulence and sophistication at Luxelands, where unparalleled luxury meets exceptional real estate. We curate an exquisite collection of properties, from lavish estates to prime lands, providing you with a seamless experience in finding your dream investment.
 
 
+<p align="center"> Sample Images</p>
+
+![1 (2)](https://github.com/PavanGuptaZ/Luxe_Lands/assets/144094802/2ca1b31f-dd33-4596-8343-b6b7dff6fccb)
+
+![1 (1)](https://github.com/PavanGuptaZ/Luxe_Lands/assets/144094802/e0cbad8e-3aec-4a98-91ae-743004debf68)
+
+
 ## Installation:
 Clone the repository to your local machine:
+
 ```bash
-git clone https://github.com/PavanGuptaZ/eqaim-fb-board.git
+git clone https://github.com/PavanGuptaZ/Luxe_Lands.git
 ```
+
 
 ### Setup Environment keys
 Create .env files in both the frontend and backend folders:
